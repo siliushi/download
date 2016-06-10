@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a id="a-html" href="test.html">html</a>
+	<a id="a-pdf" href="test.pdf">pdf</a>
+	<a id="a-doc" href="test.doc">doc</a>
+	<img src="test.png" id="img-path" alt="">
+	<img id="img-data" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGRlZnM+PHN0eWxlPi5jbHMtMntmaWxsOiNmZmY7ZmlsbC1ydWxlOmV2ZW5vZGQ7b3BhY2l0eTouOH08L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik00NS41IDI3QzU3LjkzIDI3IDY4IDM1LjE1MiA2OCA0NS4yMDhTNTcuOTMgNjMuNDE3IDQ1LjUgNjMuNDE3YTI4LjAzMSAyOC4wMzEgMCAwIDEtMy41MS0uMjIxYy00LjgzIDQuODE0LTEwLjQxIDUuNjc3LTE1Ljk5IDUuOHYtMS4xNzhjMy4wMS0xLjQ3IDUuNDQtNC4xNDcgNS40NC03LjIwNmE4LjY2MyA4LjY2MyAwIDAgMC0uMS0xLjI1NkMyNi4yNSA1Ni4wMTcgMjMgNTAuOTE5IDIzIDQ1LjIwNCAyMyAzNS4xNTIgMzMuMDcgMjcgNDUuNSAyN3ptMjQuMTkgNDAuODEzQTcuMDE1IDcuMDE1IDAgMCAwIDc0IDczLjk5Vjc1Yy00LjgzLS4xMDktOS4yNy0uODQ5LTEzLjQ2LTQuOTc1YTI0LjUxNyAyNC41MTcgMCAwIDEtMy4wNC4xOSAyMi43IDIyLjcgMCAwIDEtMTEuODktMy4yMzYgMjguODE1IDI4LjgxNSAwIDAgMCAxOC4wNC02LjEyNiAyMS45NjggMjEuOTY4IDAgMCAwIDUuNzQtNi45MDcgMTguNzE4IDE4LjcxOCAwIDAgMCAyLjE3LTguNzM4cTAtLjczNC0uMDYtMS40NjFhMTQuMTExIDE0LjExMSAwIDAgMSA1LjUgMTAuODZjMCA0LjktMi44MiA5LjI2OS03LjIzIDEyLjEzYTcuNjIyIDcuNjIyIDAgMCAwLS4wOCAxLjA3NnoiLz48L3N2Zz4=" alt="">
+	<button id="button">button</button>
+	<script src="../download.min.js"></script>
+	<script>
+		document.getElementById('a-html').onclick = function(event) {
+			event.preventDefault();
+			download(this.href);
+		};
+		document.getElementById('a-pdf').onclick = function(event) {
+			event.preventDefault();
+			download(this.href);
+		};
+		document.getElementById('a-doc').onclick = function(event) {
+			event.preventDefault();
+			download(this.href);
+		};
+		document.getElementById('img-path').onclick = function(event) {
+			event.preventDefault();
+			download(this.src);
+		};
+		document.getElementById('img-data').onclick = function(event) {
+			event.preventDefault();
+			download(this.src);
+		};
+		document.getElementById('button').onclick = function(event) {
+			download('test.html');
+		};
+	</script>
+</body>
+</html>
