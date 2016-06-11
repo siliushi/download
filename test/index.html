@@ -14,27 +14,33 @@
 	<script src="../download.min.js"></script>
 	<script>
 		document.getElementById('a-html').onclick = function(event) {
-			event.preventDefault();
-			download(this.href);
+			
+			download.init(this.href);
+			return false;
 		};
 		document.getElementById('a-pdf').onclick = function(event) {
-			event.preventDefault();
-			download(this.href);
+			
+			download.init(this.href);
+			return false;
 		};
 		document.getElementById('a-doc').onclick = function(event) {
-			event.preventDefault();
-			download(this.href);
+			
+			download.init(this.href);
+			return false;
 		};
 		document.getElementById('img-path').onclick = function(event) {
-			event.preventDefault();
-			download(this.src);
+			
+			download.init(this.src);
+			return false;
 		};
 		document.getElementById('img-data').onclick = function(event) {
-			event.preventDefault();
-			download(this.src);
+			
+			download.init(this.src);
+			return false;
 		};
 		document.getElementById('button').onclick = function(event) {
-			download('test.html');
+			download.init('test.html');
+			return false;
 		};
 	</script>
 </body>

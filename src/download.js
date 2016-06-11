@@ -14,31 +14,43 @@
     }
 })('download', function () {
     "use strict";
-    function download(src) {
-        var fileName = src.lastIndexOf("/") > -1 ? src.slice(src.lastIndexOf("/") + 1) : src;
-        var contentOrPath = src;
-        var bool = true;
-        var isIE = /Trident|MSIE/.test(navigator.userAgent);
-        if(isIE) {
-            var isImg = contentOrPath.slice(0, 10) === "data:image",
-                ifr = document.createElement('iframe');
-            ifr.style.display = 'none';
-            ifr.src = contentOrPath;
-            document.body.appendChild(ifr);
-            isImg && ifr.contentWindow.document.write("<img src='" + contentOrPath + "' />");
-            ifr.contentWindow.document.execCommand('SaveAs', false, fileName);
-            document.body.removeChild(ifr);
-        } else {
-            var aLink = document.createElement("a"),
-                evt = document.createEvent("MouseEvents"),
-                isData = contentOrPath.slice(0, 5) === "data:",
-                isPath = contentOrPath.lastIndexOf(".") > -1;
-            evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-            aLink.download = fileName;
-            aLink.href = isPath || isData ? contentOrPath : URL.createObjectURL(new Blob([contentOrPath]));
-            aLink.dispatchEvent(evt);
+
+    var download = {
+        init: function(paths) {
+            if(typeof paths === 'string') {
+                // 单个下载
+                this.start(paths);
+                return;
+            }
+            if(typeof paths === 'object') {
+                // 多个下载
+                for(var i = 0, _l = paths.length; i < _l; i++) this.start(paths[i]);
+                return;
+            }
+        },
+        start: function(path) {
+            var fileName = path.lastIndexOf("/") > -1 ? path.slice(path.lastIndexOf("/") + 1) : path;
+            var isIE = /msie|trident/.test(navigator.userAgent.toLocaleLowerCase());
+            var isData = path.slice(0, 10) === "data:image";
+            if(isIE) {
+                var iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = path;
+                document.body.appendChild(iframe);
+                isData && iframe.contentWindow.document.write("<img src='" + path + "' />");
+                iframe.contentWindow.document.execCommand('SaveAs', false, fileName);
+                document.body.removeChild(iframe);
+            } else {
+                var a = document.createElement("a"),
+                    evt = document.createEvent("MouseEvents"),
+                    isPath = path.lastIndexOf(".") > -1;
+                evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                a.download = fileName;
+                a.href = isPath || isData ? path : URL.createObjectURL(new Blob([path]));
+                a.dispatchEvent(evt);
+            }
         }
-    }
+    };
 
     return download;
 });
