@@ -5,10 +5,10 @@
 	<title>Document</title>
 </head>
 <body>
-	<a id="a-html" href="http://192.168.0.103:8001/public/fans.glb">html</a>
+	<a id="a-html" href="test.html">html</a>
 	<a id="a-pdf" href="test.pdf">pdf</a>
 	<a id="a-doc" href="test.doc">doc</a>
-	<img src="https://kano.guahao.com/OTM660961336" id="img-path" alt="">
+	<img src="test.png" id="img-path" alt="">
 	<img id="img-data" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGRlZnM+PHN0eWxlPi5jbHMtMntmaWxsOiNmZmY7ZmlsbC1ydWxlOmV2ZW5vZGQ7b3BhY2l0eTouOH08L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik00NS41IDI3QzU3LjkzIDI3IDY4IDM1LjE1MiA2OCA0NS4yMDhTNTcuOTMgNjMuNDE3IDQ1LjUgNjMuNDE3YTI4LjAzMSAyOC4wMzEgMCAwIDEtMy41MS0uMjIxYy00LjgzIDQuODE0LTEwLjQxIDUuNjc3LTE1Ljk5IDUuOHYtMS4xNzhjMy4wMS0xLjQ3IDUuNDQtNC4xNDcgNS40NC03LjIwNmE4LjY2MyA4LjY2MyAwIDAgMC0uMS0xLjI1NkMyNi4yNSA1Ni4wMTcgMjMgNTAuOTE5IDIzIDQ1LjIwNCAyMyAzNS4xNTIgMzMuMDcgMjcgNDUuNSAyN3ptMjQuMTkgNDAuODEzQTcuMDE1IDcuMDE1IDAgMCAwIDc0IDczLjk5Vjc1Yy00LjgzLS4xMDktOS4yNy0uODQ5LTEzLjQ2LTQuOTc1YTI0LjUxNyAyNC41MTcgMCAwIDEtMy4wNC4xOSAyMi43IDIyLjcgMCAwIDEtMTEuODktMy4yMzYgMjguODE1IDI4LjgxNSAwIDAgMCAxOC4wNC02LjEyNiAyMS45NjggMjEuOTY4IDAgMCAwIDUuNzQtNi45MDcgMTguNzE4IDE4LjcxOCAwIDAgMCAyLjE3LTguNzM4cTAtLjczNC0uMDYtMS40NjFhMTQuMTExIDE0LjExMSAwIDAgMSA1LjUgMTAuODZjMCA0LjktMi44MiA5LjI2OS03LjIzIDEyLjEzYTcuNjIyIDcuNjIyIDAgMCAwLS4wOCAxLjA3NnoiLz48L3N2Zz4=" alt="">
 	<button id="button">button</button>
 	<script src="../src/download.js"></script>
@@ -39,8 +39,7 @@
 			return false;
 		};
 		document.getElementById('button').onclick = function(event) {
-			const data = '<?xml version="1.0" encoding="UTF-8"?><svg width="1928px" height="80px" viewBox="0 0 1928 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>编组 19</title><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1"><stop stop-color="#434754" offset="0%"></stop><stop stop-color="#20222A" offset="100%"></stop></linearGradient><rect id="path-2" x="0" y="0" width="1920" height="72"></rect><filter x="-0.4%" y="-6.9%" width="100.7%" height="119.4%" filterUnits="objectBoundingBox" id="filter-3"><feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite><feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix></filter><linearGradient x1="-1.11022302e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-4"><stop stop-color="#354A61" offset="0%"></stop><stop stop-color="#65819A" offset="100%"></stop></linearGradient></defs><g id="三峡风电" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="编组-19" transform="translate(4.000000, 2.000000)"><g id="矩形备份-38"><use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use><rect stroke-opacity="0.4" stroke="#D4E3F3" stroke-width="0.5" stroke-linejoin="square" fill="url(#linearGradient-1)" fill-rule="evenodd" x="0.25" y="0.25" width="1919.5" height="71.5"></rect></g><path d="M40,0 L80,72 L40,72 L0,0 L40,0 Z M100,0 L140,72 L100,72 L60,0 L100,0 Z M160,0 L200,72 L160,72 L120,0 L160,0 Z M220,0 L260,72 L220,72 L180,0 L220,0 Z M280,0 L320,72 L280,72 L240,0 L280,0 Z M340,0 L380,72 L340,72 L300,0 L340,0 Z" id="形状结合备份-6" fill="url(#linearGradient-4)"></path></g></g></svg>'
-			download.fetch(data, 'bg.svg');
+			download.init('test.html');
 			return false;
 		};
 	</script>
